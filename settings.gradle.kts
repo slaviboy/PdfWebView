@@ -1,8 +1,11 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        gradlePluginPortal()
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 dependencyResolutionManagement {
@@ -10,8 +13,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 rootProject.name = "PdfWebView"
-include ':app'
-include ':pdfwebview'
+include(":pdfwebview", ":app")
